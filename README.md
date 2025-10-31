@@ -35,12 +35,20 @@ Print the dataset shapes and visualize a few samples using matplotlib
   -  Convolutional layers should have 64 filters, not 32
   -  Use **Pooling** and **Dropout** as needed to prevent overfitting
   -  Output layer should still be **Dense** with 10 classes and a **softmax** activation
+  -  You will also need to convert the labels to one hot using to_categorical:
+```python
+from tensorflow.keras.utils import to_categorical
+
+y_train = to_categorical(y_train, 10)
+y_test = to_categorical(y_test, 10)
+
+```
 
 ## Step 3. Compile and Train
 
   -  Use Adam optimzer and appropriate the loss
 ```python
-model.compile(optimizer='adam',loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+model.compile(optimizer='adam',loss='categorical_crossentropy', metrics=['accuracy'])
 ```
   -  Train for *at least* 10 epochs
 ```python
