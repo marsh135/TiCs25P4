@@ -52,7 +52,7 @@ model.compile(optimizer='adam',loss='categorical_crossentropy', metrics=['acc'])
 ```
   -  Train for *at least* 10 epochs
 ```python
-history = model.fit(x_train, y_train,epochs=10,validation_data=(x_test, y_test))
+history = model.fit(x_train, y_train,epochs=10,validation_split=0.1)
 ```
   -  Save your training history and visualize
     -  Accuracy over epochs
