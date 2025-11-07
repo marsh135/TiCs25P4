@@ -48,7 +48,7 @@ y_test = to_categorical(y_test, 10)
 
   -  Use Adam optimzer and appropriate the loss
 ```python
-model.compile(optimizer='adam',loss='categorical_crossentropy', metrics=['accuracy'])
+model.compile(optimizer='adam',loss='categorical_crossentropy', metrics=['acc'])
 ```
   -  Train for *at least* 10 epochs
 ```python
